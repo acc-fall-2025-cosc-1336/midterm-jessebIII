@@ -1,4 +1,4 @@
-"""Discovery-friendly unit tests for questions A and B."""
+
 import os
 import sys
 import unittest
