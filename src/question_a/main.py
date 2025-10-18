@@ -1,13 +1,8 @@
-"""Interactive program for question A.
 
-Prompts the user for the actual property value repeatedly and displays
-the assessment value and property tax until the user decides to quit.
-"""
 
 import os
 import sys
 
-# Ensure the repository root is on sys.path so `src` is importable when running this module directly
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 if ROOT not in sys.path:
 	sys.path.insert(0, ROOT)
