@@ -14,7 +14,7 @@ def main():
 
     #Display results
     print(f"assessment value:  ${assessment_value:.2f}")
-    print{f"property tax: ${tax:.2f"}"
+    print(f"property tax: ${tax:.2f}")
 
 #Run the program
 main()
