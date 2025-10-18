@@ -4,6 +4,10 @@ def get_assessment_value(value):
 def get_tax_assessed(assessment_value):
     return (assessment_value/100) *0.72
 
+# helper used by tests
+def test_config():
+    return True
+
 #Main program
 def main():
     actual_value = float(input("enter the actual value of the property: $"))
@@ -17,4 +21,5 @@ def main():
     print(f"property tax: ${tax:.2f}")
 
 #Run the program
-main()
+if __name__ == "__main__":
+    main()
