@@ -8,18 +8,4 @@ def get_tax_assessed(assessment_value):
 def test_config():
     return True
 
-#Main program
-def main():
-    actual_value = float(input("enter the actual value of the property: $"))
-
-    assessment_value = get_assessment_value(actual_value)
-
-    tax = get_tax_assessed(assessment_value)
-
-    #Display results
-    print(f"assessment value:  ${assessment_value:.2f}")
-    print(f"property tax: ${tax:.2f}")
-
-#Run the program
-if __name__ == "__main__":
-    main()
+# Interactive behavior (prompting/looping) is provided by `src.question_a.main`.
