@@ -8,4 +8,3 @@ def get_tax_assessed(assessment_value):
 def test_config():
     return True
 
-# Interactive behavior (prompting/looping) is provided by `src.question_a.main`.

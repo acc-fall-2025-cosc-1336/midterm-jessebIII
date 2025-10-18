@@ -1,0 +1,56 @@
+"""Discovery-friendly unit tests for questions A and B."""
+import os
+import sys
+import unittest
+
+# Ensure repo root is on sys.path so `src` imports work when running tests via discovery
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+
+from src.question_a.question_a import (
+    test_config as test_a_config,
+    get_assessment_value,
+    get_tax_assessed,
+)
+from src.question_b.question_b import (
+    test_config as test_b_config,
+    is_prime,
+)
+
+
+class TestQuestionA(unittest.TestCase):
+    def test_question_a_config(self):
+        self.assertTrue(test_a_config())
+
+    # get_assessment_value tests
+    def test_get_assessment_value_10000(self):
+        self.assertEqual(get_assessment_value(10000), 6000)
+
+    def test_get_assessment_value_20000(self):
+        self.assertEqual(get_assessment_value(20000), 12000)
+
+    # get_tax_assessed tests
+    def test_get_tax_assessed_6000(self):
+        self.assertAlmostEqual(get_tax_assessed(6000), 43.2, places=2)
+
+    def test_get_tax_assessed_10000(self):
+        self.assertAlmostEqual(get_tax_assessed(10000), 72.0, places=2)
+
+
+class TestQuestionB(unittest.TestCase):
+    def test_question_b_config(self):
+        self.assertTrue(test_b_config())
+
+    def test_is_prime_4(self):
+        self.assertFalse(is_prime(4))
+
+    def test_is_prime_5(self):
+        self.assertTrue(is_prime(5))
+
+    def test_is_prime_11(self):
+        self.assertTrue(is_prime(11))
+
+
+if __name__ == "__main__":
+    unittest.main()
