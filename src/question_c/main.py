@@ -1,10 +1,3 @@
-"""Interactive program for question C: guess the random number (1-5).
-
-Generates a random number 1..5 and repeatedly prompts the user to guess.
-If the guess is correct, congratulates and generates a new random number.
-Enter 'q' to quit.
-"""
-
 import os
 import sys
 
