@@ -54,3 +54,19 @@ class TestQuestionB(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+from src.question_c.question_c import test_config as test_c_config, get_random_number
+
+
+class TestQuestionC(unittest.TestCase):
+    def test_question_c_config(self):
+        self.assertTrue(test_c_config())
+
+    def test_get_random_number_range(self):
+        # Non-deterministic: check that the result is an int and in the correct range
+        n = get_random_number()
+        self.assertIsInstance(n, int)
+        self.assertGreaterEqual(n, 1)
+        self.assertLessEqual(n, 5)
+
