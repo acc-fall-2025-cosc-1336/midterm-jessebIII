@@ -51,11 +51,9 @@ class TestQuestionB(unittest.TestCase):
         self.assertTrue(is_prime(11))
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 from src.question_c.question_c import test_config as test_c_config, get_random_number
+from src.question_d.question_d import test_config as test_d_config, get_day_of_week
 
 
 class TestQuestionC(unittest.TestCase):
@@ -68,4 +66,27 @@ class TestQuestionC(unittest.TestCase):
         self.assertIsInstance(n, int)
         self.assertGreaterEqual(n, 1)
         self.assertLessEqual(n, 5)
+
+
+class TestQuestionD(unittest.TestCase):
+    def test_day_0_invalid(self):
+        with self.assertRaises(ValueError):
+            get_day_of_week(0)
+
+    def test_day_1_monday(self):
+        self.assertEqual(get_day_of_week(1), "Monday")
+
+    def test_day_2_tuesday(self):
+        self.assertEqual(get_day_of_week(2), "Tuesday")
+
+    def test_day_3_wednesday(self):
+        self.assertEqual(get_day_of_week(3), "Wednesday")
+
+    def test_day_8_invalid(self):
+        with self.assertRaises(ValueError):
+            get_day_of_week(8)
+
+
+if __name__ == "__main__":
+    unittest.main()
 
