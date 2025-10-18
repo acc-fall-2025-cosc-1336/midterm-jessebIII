@@ -1,6 +1,3 @@
-q
-
-
 
 import os
 import sys
